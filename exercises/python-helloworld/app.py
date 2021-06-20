@@ -1,5 +1,11 @@
 from flask import Flask
 
+import logging
+
+log_format = "%(asctime)s, %(message)s"
+
+logging.basicConfig(filename="app.log", level=logging.DEBUG, format=log_format)
+
 app = Flask(__name__)
 
 
@@ -10,6 +16,7 @@ def hello():
 
 @app.route("/status")
 def status():
+    logging.debug("/status endpoint was reached")
     return {
         "result": "OK - healthy"
     }
@@ -17,6 +24,7 @@ def status():
 
 @app.route("/metrics")
 def metrics():
+    logging.debug("/metrics endpoint was reached")
     return {
         "data":
             {

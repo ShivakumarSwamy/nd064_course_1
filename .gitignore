@@ -1,3 +1,4 @@
 exercises/python-helloworld/venv/
+exercises/python-helloworld/__pycache__/
 .DS_Store
 .idea/
